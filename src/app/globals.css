@@ -1,26 +1,16 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+:root { --ink:#153d37; --green:#176b5b; --lime:#d8f05a; --cream:#f5f3e9; --muted:#6d7d78; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:#fbfcf8; color:var(--ink); font-family:var(--font-body),sans-serif; }
+h1,h2,h3,.display { font-family:var(--font-display),sans-serif; }
+button,a { -webkit-tap-highlight-color:transparent; }
+.container { width:min(1180px,calc(100% - 40px)); margin-inline:auto; }
+.eyebrow { font-size:12px; text-transform:uppercase; letter-spacing:.18em; font-weight:800; color:var(--green); }
+.btn-primary { display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:14px 22px; border-radius:999px; background:var(--lime); color:#153d37; font-weight:800; transition:.2s; }
+.btn-primary:hover { transform:translateY(-2px); box-shadow:0 10px 25px #0d3d3225; }
+.btn-dark { display:inline-flex; align-items:center; gap:8px; padding:13px 20px; border-radius:999px; background:var(--ink); color:white; font-weight:700; }
+.trip-card { transition:transform .25s,box-shadow .25s; }
+.trip-card:hover { transform:translateY(-7px); box-shadow:0 22px 45px #173c351a; }
+@media(max-width:700px){.container{width:min(100% - 28px,1180px)}.desktop-nav{display:none!important}}

@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aligatour — Tour and Travel
 
-## Getting Started
+Website resmi Aligatour, agen tour dan travel yang berfokus pada City Tour Malang–Batu, private trip, shuttle, serta perjalanan wisata di Jawa Timur.
 
-First, run the development server:
+## Tentang proyek
+
+Website ini dirancang sebagai katalog layanan dan paket perjalanan Aligatour. Pengunjung dapat melihat destinasi, fasilitas, pilihan paket, harga kendaraan, serta menghubungi Aligatour melalui WhatsApp dan media sosial.
+
+Layanan utama Aligatour:
+
+- City Tour Specialist Malang–Batu
+- Private Trip Bromo
+- Trip Ranu Kumbolo
+- Trip Tumpak Sewu
+- Shuttle Malang–Ranu Pani
+- Transportasi antar kota
+
+## Fitur yang tersedia
+
+- Landing page responsif
+- Katalog paket perjalanan
+- Halaman detail Private Trip Bromo
+- Perbandingan paket Ekonomis, Premium, dan Luxury
+- Halaman Malang–Batu City Tour
+- Daftar kendaraan, kapasitas, dan harga
+- Galeri fasilitas perjalanan
+- Tombol reservasi WhatsApp dengan pesan otomatis
+- Integrasi Instagram, Facebook, TikTok, dan email
+- Metadata dasar untuk SEO
+
+## Halaman
+
+| URL | Deskripsi |
+| --- | --- |
+| `/` | Beranda dan katalog perjalanan |
+| `/trips/private-trip-bromo` | Detail dan pilihan paket Private Trip Bromo |
+| `/trips/malang-batu-city-tour` | Detail layanan dan pricelist City Tour Malang–Batu |
+
+## Teknologi
+
+- Next.js dengan App Router
+- React
+- TypeScript
+- Tailwind CSS
+- Phosphor Icons
+- Next.js Image Optimization
+
+## Menjalankan proyek
+
+Pastikan Node.js dan npm sudah terpasang, kemudian jalankan:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Buka [http://localhost:3000](http://localhost:3000) melalui browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Pemeriksaan proyek
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+```
 
-## Learn More
+## Kontak Aligatour
 
-To learn more about Next.js, take a look at the following resources:
+- WhatsApp: +62 856-3532-918
+- Email: aligatourmalang@gmail.com
+- Instagram: [@aligatour.malang](https://www.instagram.com/aligatour.malang)
+- Facebook: [Aligatour Malang](https://www.facebook.com/aligatourmalang)
+- TikTok: [@aligatourtravel](https://www.tiktok.com/@aligatourtravel)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Aligatour — *Tour and Travel*
