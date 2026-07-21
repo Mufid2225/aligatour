@@ -18,11 +18,11 @@ const includeGroups = [
 const excludes = ["Transportasi menuju meeting point", "Surat sehat", "Sleeping bag", "Obat pribadi", "Camilan pribadi", "Porter pribadi", "Perlengkapan camping pribadi", "Hal yang tidak disebutkan dalam include"];
 
 const facilities = [
-  { title: "Full Powerbank", image: "/trips/powerbank.webp" },
-  { title: "Free Wi-Fi", image: "/trips/wifi.webp" },
-  { title: "Insta360 X4 Air", note: "Terbatas", image: "/trips/insta360x4.webp" },
-  { title: "Insta360 Ace Pro 2", note: "Terbatas", image: "/trips/insta360ace.webp" },
-  { title: "Gimbal", note: "Terbatas", image: "/trips/gimbal.webp" },
+  { title: "Full Powerbank", image: "/facilities/powerbank.webp" },
+  { title: "Free Wi-Fi", image: "/facilities/wifi.webp" },
+  { title: "Insta360 X4 Air", note: "Terbatas", image: "/facilities/insta360-x4.webp" },
+  { title: "Insta360 Ace Pro 2", note: "Terbatas", image: "/facilities/insta360-ace.webp" },
+  { title: "Gimbal", note: "Terbatas", image: "/facilities/gimbal.webp" },
 ];
 
 const packageFeatures = ["Menginap 1 malam", "Handwarmer", "Pijat setelah trip", "Sleeping bag", "Surat sehat", "Camilan pribadi", "Porter pribadi", "Fotografer pribadi", "Gratis trip promo"];
@@ -35,7 +35,7 @@ const packages = [
 export default function PrivateTripRanuKumboloPage() {
   return <main className="min-h-screen bg-[#fbfcf8]">
     <section className="relative min-h-[620px] overflow-hidden bg-[#153d37] text-white">
-      <Image src="/ranu-kumbolo-card.jpg" alt="Danau Ranu Kumbolo" fill priority sizes="100vw" className="object-cover opacity-60"/>
+      <Image src="/trip-cards/ranu-kumbolo.jpg" alt="Danau Ranu Kumbolo" fill priority sizes="100vw" className="object-cover opacity-60"/>
       <div className="absolute inset-0 bg-gradient-to-r from-[#102f2b]/95 via-[#102f2b]/68 to-[#102f2b]/20"/>
       <div className="container relative z-10 py-7"><Link href="/" className="inline-flex items-center gap-2 text-sm font-bold text-white/80"><ArrowLeft/> Kembali ke beranda</Link></div>
       <div className="container relative z-10 pb-20 pt-16"><span className="inline-flex items-center gap-2 rounded-full bg-[#d8f05a] px-4 py-2 text-xs font-extrabold uppercase tracking-wider text-[#153d37]"><Mountains weight="fill"/> Private Trip · 2 Hari 1 Malam</span><h1 className="mt-6 max-w-4xl text-5xl font-extrabold tracking-[-.04em] sm:text-7xl">Ranu Kumbolo,<br/><span className="text-[#d8f05a]">lebih dekat bersama.</span></h1><p className="mt-6 max-w-2xl text-lg leading-8 text-white/75">Perjalanan private menuju salah satu danau terindah di Semeru, dirancang untuk grup kecil agar lebih nyaman dan personal.</p><div className="mt-8 flex flex-wrap items-end gap-7"><div><small className="text-white/60">Mulai dari · per grup 2–4 orang</small><p className="text-3xl font-extrabold text-[#d8f05a]">Rp2.200.000</p></div><a href="#packages" className="btn-primary">Pilih paket <UsersThree size={20} weight="fill"/></a></div></div>

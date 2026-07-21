@@ -1,76 +1,104 @@
 # Aligatour — Tour and Travel
 
-Website resmi Aligatour, agen tour dan travel yang berfokus pada City Tour Malang–Batu, private trip, shuttle, serta perjalanan wisata di Jawa Timur.
+Website katalog perjalanan Aligatour untuk menampilkan layanan wisata di Malang, Batu, dan beberapa destinasi di Jawa Timur. Pengunjung dapat melihat ringkasan paket, harga, fasilitas, serta menghubungi Aligatour melalui WhatsApp.
 
-## Tentang proyek
+## Status
 
-Website ini dirancang sebagai katalog layanan dan paket perjalanan Aligatour. Pengunjung dapat melihat destinasi, fasilitas, pilihan paket, harga kendaraan, serta menghubungi Aligatour melalui WhatsApp dan media sosial.
+Website saat ini mencakup halaman beranda dan enam halaman detail layanan. Informasi paket masih disimpan langsung di source code dan reservasi dilakukan melalui WhatsApp.
 
-Layanan utama Aligatour:
+Belum tersedia CMS, akun pengguna, pembayaran online, atau informasi jadwal secara real-time.
 
-- City Tour Specialist Malang–Batu
+## Layanan
+
+- Malang–Batu City Tour
+- Private Shuttle Malang–Ranu Pane
+- Private Trip Ranu Kumbolo
+- Open Trip Tumpak Sewu
+- Private Trip Pantai Malang
 - Private Trip Bromo
-- Trip Ranu Kumbolo
-- Trip Tumpak Sewu
-- Shuttle Malang–Ranu Pani
-- Transportasi antar kota
-
-## Fitur yang tersedia
-
-- Landing page responsif
-- Katalog paket perjalanan
-- Halaman detail Private Trip Bromo
-- Perbandingan paket Ekonomis, Premium, dan Luxury
-- Halaman Malang–Batu City Tour
-- Daftar kendaraan, kapasitas, dan harga
-- Galeri fasilitas perjalanan
-- Tombol reservasi WhatsApp dengan pesan otomatis
-- Integrasi Instagram, Facebook, TikTok, dan email
-- Metadata dasar untuk SEO
 
 ## Halaman
 
 | URL | Deskripsi |
 | --- | --- |
-| `/` | Beranda dan katalog perjalanan |
-| `/trips/private-trip-bromo` | Detail dan pilihan paket Private Trip Bromo |
-| `/trips/malang-batu-city-tour` | Detail layanan dan pricelist City Tour Malang–Batu |
+| `/` | Beranda, katalog perjalanan, informasi singkat, dan kontak |
+| `/trips/malang-batu-city-tour` | Detail dan pilihan kendaraan City Tour Malang–Batu |
+| `/trips/private-shuttle-ranu-pane` | Detail shuttle private Malang–Ranu Pane |
+| `/trips/private-trip-ranu-kumbolo` | Detail dan pilihan paket Ranu Kumbolo |
+| `/trips/open-trip-tumpak-sewu` | Detail Open Trip Tumpak Sewu |
+| `/trips/private-trip-pantai-malang` | Detail Private Trip Pantai Malang Selatan |
+| `/trips/private-trip-bromo` | Detail dan pilihan paket Bromo |
+
+## Fitur yang tersedia
+
+- Tampilan responsif untuk desktop dan perangkat mobile
+- Katalog layanan dan halaman detail perjalanan
+- Informasi harga, destinasi, fasilitas, serta ketentuan paket
+- Tautan reservasi WhatsApp dengan pesan awal
+- Tautan media sosial dan email Aligatour
+- Metadata judul dan deskripsi pada halaman trip
+- Optimasi gambar melalui komponen `next/image`
 
 ## Teknologi
 
-- Next.js dengan App Router
-- React
+- Next.js 16 dengan App Router
+- React 19
 - TypeScript
-- Tailwind CSS
+- Tailwind CSS 4
 - Phosphor Icons
-- Next.js Image Optimization
+- Netlify
 
-## Menjalankan proyek
+## Menjalankan project
 
-Pastikan Node.js dan npm sudah terpasang, kemudian jalankan:
+### Prasyarat
+
+- Node.js 22
+- npm
+
+### Instalasi
 
 ```bash
 npm install
 npm run dev
 ```
 
-Buka [http://localhost:3000](http://localhost:3000) melalui browser.
+Buka [http://localhost:3000](http://localhost:3000) di browser.
 
-## Pemeriksaan proyek
+## Perintah
 
 ```bash
-npm run lint
-npm run build
+npm run dev    # menjalankan development server
+npm run lint   # menjalankan ESLint
+npm run build  # membuat production build
+npm run start  # menjalankan production build
 ```
 
-## Kontak Aligatour
+## Struktur utama
 
-- WhatsApp: +62 856-3532-918
-- Email: aligatourmalang@gmail.com
+```text
+src/app/                    Halaman dan layout App Router
+src/app/trips/              Halaman detail layanan
+public/brand/               Logo Aligatour
+public/trip-cards/          Gambar utama paket perjalanan
+public/facilities/          Gambar fasilitas perjalanan
+public/destinations/        Galeri destinasi per perjalanan
+public/pricelists/          Materi pricelist
+public/reference/           Materi referensi paket
+netlify.toml                Konfigurasi build Netlify
+```
+
+## Deployment
+
+Konfigurasi Netlify tersedia di `netlify.toml` dengan perintah build `npm run build` dan Node.js 22.
+
+## Kontak
+
+- WhatsApp: [+62 856-3532-918](https://wa.me/628563532918)
+- Email: [aligatourmalang@gmail.com](mailto:aligatourmalang@gmail.com)
 - Instagram: [@aligatour.malang](https://www.instagram.com/aligatour.malang)
 - Facebook: [Aligatour Malang](https://www.facebook.com/aligatourmalang)
 - TikTok: [@aligatourtravel](https://www.tiktok.com/@aligatourtravel)
 
 ---
 
-Aligatour — *Tour and Travel*
+Aligatour — *Bukan sekadar pergi. Bawa pulang cerita.*

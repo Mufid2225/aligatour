@@ -12,14 +12,14 @@ const destinations = ["Sunrise Point", "Lembah Widodaren", "Pura Luhur Poten", "
 const includes = ["7 destinasi wisata", "Transportasi pulang-pergi", "Jeep Bromo", "Tiket masuk Bromo", "Driver & BBM", "Biaya parkir", "Dokumentasi—all files"];
 const features = ["Dokumentasi", "Welcome Snack & Drink", "Full Powerbank", "Free Wi-Fi", "Insta360 X4 Air / Ace Pro 2", "Gimbal", "Handwarmer", "Guest House", "Professional Massage (2 pax)"];
 const facilityCards = [
-  { title: "Snack & Drink", images: ["/trips/snack_drink.webp"] },
-  { title: "Full Powerbank", images: ["/trips/powerbank.webp"] },
-  { title: "Free Wi-Fi", images: ["/trips/wifi.webp"] },
-  { title: "Insta360 X4 Air / Insta360 Ace Pro 2", images: ["/trips/insta360x4.webp", "/trips/insta360ace.webp"] },
-  { title: "Gimbal", images: ["/trips/gimbal.webp"] },
-  { title: "Handwarmer", images: ["/trips/handwarmer.webp"] },
-  { title: "All Files & Edited Photos", images: ["/trips/dokumentasi.webp"] },
-  { title: "Cinematic Video", images: ["/trips/cinematic.webp"] },
+  { title: "Snack & Drink", images: ["/facilities/snack-drink.webp"] },
+  { title: "Full Powerbank", images: ["/facilities/powerbank.webp"] },
+  { title: "Free Wi-Fi", images: ["/facilities/wifi.webp"] },
+  { title: "Insta360 X4 Air / Insta360 Ace Pro 2", images: ["/facilities/insta360-x4.webp", "/facilities/insta360-ace.webp"] },
+  { title: "Gimbal", images: ["/facilities/gimbal.webp"] },
+  { title: "Handwarmer", images: ["/facilities/handwarmer.webp"] },
+  { title: "All Files & Edited Photos", images: ["/facilities/dokumentasi.webp"] },
+  { title: "Cinematic Video", images: ["/facilities/cinematic.webp"] },
 ];
 const packages = [
   {name:"Ekonomis", price:"1.800K", caption:"Esensial untuk menjelajah Bromo", unavailable:["Free Wi-Fi", "Insta360 X4 Air / Ace Pro 2", "Gimbal", "Handwarmer", "Guest House", "Professional Massage (2 pax)"]},

@@ -8,7 +8,7 @@ const manrope = Manrope({ variable: "--font-display", subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Aligatour — Temukan Cerita di Setiap Perjalanan",
   description: "City Tour Specialist Malang–Batu, shuttle Malang–Ranu Pani, dan trip Ranu Kumbolo, Bromo, serta Tumpak Sewu bersama Aligatour.",
-  icons: { icon: "/logo_aligatour.webp", apple: "/logo_aligatour.webp" },
+  icons: { icon: "/brand/logo-aligatour.webp", apple: "/brand/logo-aligatour.webp" },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

@@ -18,11 +18,11 @@ const vehicles = [
 ];
 
 const facilities = [
-  { title: "Snack & Drink", image: "/trips/snack_drink.webp" },
-  { title: "Full Powerbank", image: "/trips/powerbank.webp" },
-  { title: "Free Wi-Fi", image: "/trips/wifi.webp" },
-  { title: "Insta360 X4 Air", note: "Terbatas", image: "/trips/insta360x4.webp" },
-  { title: "Dokumentasi", image: "/trips/dokumentasi.webp" },
+  { title: "Snack & Drink", image: "/facilities/snack-drink.webp" },
+  { title: "Full Powerbank", image: "/facilities/powerbank.webp" },
+  { title: "Free Wi-Fi", image: "/facilities/wifi.webp" },
+  { title: "Insta360 X4 Air", note: "Terbatas", image: "/facilities/insta360-x4.webp" },
+  { title: "Dokumentasi", image: "/facilities/dokumentasi.webp" },
 ];
 
 export default function PrivateShuttleRanuPanePage() {
