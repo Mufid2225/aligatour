@@ -13,11 +13,12 @@ interface CardFanCarouselProps {
   cards: CardItem[];
 }
 
-const positions = [
-  { x: -34, y: 7, rotation: -12, scale: 0.84, zIndex: 1 },
-  { x: 0, y: 0, rotation: 0, scale: 1, zIndex: 3 },
-  { x: 34, y: 7, rotation: 12, scale: 0.84, zIndex: 1 },
-];
+function getResponsive(innerWidth: number) {
+  if (innerWidth < 420) return { cardW: 160, cardH: 220, gapG: 2, btnS: 32, offsetX: -48, offsetY: 5, rot: 10, scale: 0.82 };
+  if (innerWidth < 640) return { cardW: 200, cardH: 260, gapG: 3, btnS: 36, offsetX: -40, offsetY: 5, rot: 12, scale: 0.84 };
+  if (innerWidth < 1024) return { cardW: 260, cardH: 340, gapG: 3, btnS: 40, offsetX: -36, offsetY: 6, rot: 12, scale: 0.84 };
+  return { cardW: 300, cardH: 380, gapG: 4, btnS: 44, offsetX: -34, offsetY: 7, rot: 12, scale: 0.84 };
+}
 
 export default function CardFanCarousel({ cards }: CardFanCarouselProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -47,6 +48,13 @@ export default function CardFanCarousel({ cards }: CardFanCarouselProps) {
     const elements = containerRef.current?.querySelectorAll<HTMLElement>("[data-fan-card]");
     if (!elements?.length) return;
 
+    const r = getResponsive(window.innerWidth);
+    const positions = [
+      { x: r.offsetX, y: r.offsetY, rot: -r.rot, scale: r.scale, zIndex: 1 },
+      { x: 0, y: 0, rot: 0, scale: 1, zIndex: 3 },
+      { x: -r.offsetX, y: r.offsetY, rot: r.rot, scale: r.scale, zIndex: 1 },
+    ];
+
     const visible = [
       (activeIndex - 1 + cards.length) % cards.length,
       activeIndex,
@@ -63,12 +71,12 @@ export default function CardFanCarousel({ cards }: CardFanCarouselProps) {
 
       const target = positions[slot];
       if (firstRenderRef.current) {
-        gsap.set(element, { xPercent: target.x, yPercent: 70, rotation: 0, scale: 0.65, opacity: 0 });
+        gsap.set(element, { xPercent: 0, yPercent: 80, rotation: 0, scale: 0.5, opacity: 0 });
       }
       gsap.to(element, {
         xPercent: target.x,
         yPercent: target.y,
-        rotation: target.rotation,
+        rotation: target.rot,
         scale: target.scale,
         opacity: 1,
         zIndex: target.zIndex,
@@ -88,21 +96,23 @@ export default function CardFanCarousel({ cards }: CardFanCarouselProps) {
 
   if (!cards.length) return null;
 
+  const r = typeof window !== "undefined" ? getResponsive(window.innerWidth) : getResponsive(1200);
+
   return (
-    <div className="flex min-h-[460px] flex-col items-center justify-center overflow-hidden py-8 sm:min-h-[540px]">
-      <div ref={containerRef} className="relative h-[380px] w-full max-w-[300px] sm:h-[460px] sm:max-w-[340px]">
+    <div className="flex flex-col items-center justify-center overflow-hidden py-4 sm:py-6" style={{ minHeight: `${r.cardH + 120}px` }}>
+      <div ref={containerRef} className="relative" style={{ height: `${r.cardH}px`, width: `${r.cardW + 40}px`, maxWidth: `${r.cardW + 40}px` }}>
         {cards.map((card, index) => (
-          <div key={card.imgUrl} data-fan-card className="absolute inset-x-0 top-0 h-[380px] overflow-hidden rounded-[28px] border-4 border-white bg-white shadow-2xl shadow-[#153d3730] sm:h-[460px]">
-            <Image src={card.imgUrl} alt={card.alt} fill sizes="(max-width: 640px) 80vw, 340px" className="object-cover" priority={index === 0}/>
+          <div key={card.imgUrl} data-fan-card className="absolute inset-x-0 top-0 overflow-hidden rounded-[16px] border-2 border-white bg-white shadow-lg shadow-[#153d3720] sm:rounded-[20px] sm:border-4" style={{ height: `${r.cardH}px` }}>
+            <Image src={card.imgUrl} alt={card.alt} fill sizes={`${r.cardW}px`} className="object-cover" priority={index === 0}/>
           </div>
         ))}
       </div>
-      <div className="relative z-10 mt-2 flex items-center gap-4">
-        <button type="button" onClick={() => { cycle(-1); resetTimer(); }} aria-label="Foto sebelumnya" className="flex size-11 cursor-pointer items-center justify-center rounded-full border border-[#153d37]/15 bg-white text-xl font-bold shadow-lg transition hover:-translate-y-0.5 hover:border-[#176b5b]">←</button>
-        <div className="flex gap-2" aria-label={`Foto ${activeIndex + 1} dari ${cards.length}`}>
-          {cards.map((card, index) => <button key={card.imgUrl} type="button" onClick={() => { if (!animatingRef.current) { setActiveIndex(index); resetTimer(); } }} aria-label={`Tampilkan foto ${index + 1}`} className={`h-2.5 cursor-pointer rounded-full transition-all ${index === activeIndex ? "w-7 bg-[#176b5b]" : "w-2.5 bg-[#153d37]/20"}`}/>) }
+      <div className="relative z-10 mt-3 flex items-center gap-3 sm:mt-4" style={{ gap: `${r.gapG}px` }}>
+        <button type="button" onClick={() => { cycle(-1); resetTimer(); }} aria-label="Foto sebelumnya" className="flex cursor-pointer items-center justify-center rounded-full border border-[#153d37]/15 bg-white font-bold shadow transition hover:-translate-y-0.5 hover:border-[#176b5b]" style={{ width: `${r.btnS}px`, height: `${r.btnS}px`, fontSize: `${r.btnS * 0.5}px` }}>←</button>
+        <div className="flex gap-1.5 sm:gap-2" aria-label={`Foto ${activeIndex + 1} dari ${cards.length}`}>
+          {cards.map((card, index) => <button key={card.imgUrl} type="button" onClick={() => { if (!animatingRef.current) { setActiveIndex(index); resetTimer(); } }} aria-label={`Tampilkan foto ${index + 1}`} className={`h-1.5 cursor-pointer rounded-full transition-all sm:h-2 ${index === activeIndex ? "w-4 bg-[#176b5b] sm:w-5" : "w-1.5 bg-[#153d37]/20 sm:w-2"}`}/>) }
         </div>
-        <button type="button" onClick={() => { cycle(1); resetTimer(); }} aria-label="Foto berikutnya" className="flex size-11 cursor-pointer items-center justify-center rounded-full border border-[#153d37]/15 bg-white text-xl font-bold shadow-lg transition hover:-translate-y-0.5 hover:border-[#176b5b]">→</button>
+        <button type="button" onClick={() => { cycle(1); resetTimer(); }} aria-label="Foto berikutnya" className="flex cursor-pointer items-center justify-center rounded-full border border-[#153d37]/15 bg-white font-bold shadow transition hover:-translate-y-0.5 hover:border-[#176b5b]" style={{ width: `${r.btnS}px`, height: `${r.btnS}px`, fontSize: `${r.btnS * 0.5}px` }}>→</button>
       </div>
     </div>
   );
