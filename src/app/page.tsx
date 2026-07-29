@@ -6,7 +6,7 @@ const testimonials = [
   { name: "Nadia Putri", trip: "Open Trip Ranu Kumbolo", date: "Mei 2026", rating: 5, quote: "Pertama kali ikut open trip sendirian, tapi rasanya seperti pergi bareng teman lama. Semuanya tertata, tour leader-nya seru, dan Ranu Kumbolo benar-benar tak terlupakan." },
   { name: "Rizky Aditya", trip: "Private Trip Bromo", date: "Juni 2026", rating: 5, quote: "Sunrise di Bromo luar biasa! Driver dan guide sangat ramah. Jeep yang disiapkan juga nyaman. Pasti balik lagi next time." },
   { name: "Salsa Amalia", trip: "Malang-Batu City Tour", date: "April 2026", rating: 5, quote: "Bebas pilih destinasi, driver-nya flexibel banget. Recommended banget buat yang mau jalan-jalan santai di Malang." },
-  { name: "Fajar Nugroho", trip: "Open Trip Tumpak Sewu", date: "Juni 2026", rating: 5, quote: "Tumpak Sewu dari dekat lebih keren dari foto-foto di IG. Dokumentasi juga sudah termasuk, tinggal nikmatin perjalanan." },
+  { name: "Fajar Nugroho", trip: "Private Trip Tumpak Sewu", date: "Juni 2026", rating: 5, quote: "Tumpak Sewu dari dekat lebih keren dari foto-foto di IG. Dokumentasi juga sudah termasuk, tinggal nikmatin perjalanan." },
   { name: "Maya Putri", trip: "Private Trip Ranu Kumbolo", date: "Mei 2026", rating: 5, quote: "Paket Luxury-nya worth it! Chef pribadi, semua fasilitas lengkap. Tim-nya profesional dan friendly. Trip terbaik!" },
   { name: "Andi Pratama", trip: "Private Shuttle Ranu Pane", date: "Juni 2026", rating: 5, quote: "Shuttle nyaman, driver tepat waktu. Gratis shelter H-1-nya bantu banget buat yang datang malam sebelumnya." },
 ];
@@ -38,7 +38,7 @@ const trips = [
   {title:"Malang-Batu City Tour", place:"Malang & Kota Batu", price:"500.000", unit:"/mobil", days:"Private - 4 kursi", rating:"4.9", image:"/trip-cards/malang-batu-city-tour.webp", tag:"Bebas pilih destinasi", href:"/trips/malang-batu-city-tour"},
   {title:"Private Shuttle Ranu Pane", place:"Malang -> Basecamp Ranu Pane", price:"8xx.xxx", unit:"/mobil", days:"PP - 1-10 kursi", rating:"4.9", image:"/trip-cards/private-shuttle-ranu-pane.webp", tag:"Gratis shelter H-1", href:"/trips/private-shuttle-ranu-pane"},
   {title:"Private Trip Ranu Kumbolo", place:"Semeru, Jawa Timur", price:"2.200.000", unit:"/grup", days:"2 Hari 1 Malam - 2-4 orang", rating:"4.9", image:"/trip-cards/ranu-kumbolo.jpg", tag:"3 pilihan paket", href:"/trips/private-trip-ranu-kumbolo"},
-  {title:"Open Trip Tumpak Sewu", place:"Meeting point Malang & Batu", price:"350.000", unit:"/orang", days:"1 Hari - Per orang", rating:"4.8", image:"/trip-cards/tumpak-sewu.jpg", tag:"Berangkat setiap hari", href:"/trips/open-trip-tumpak-sewu"},
+  {title:"Private Trip Tumpak Sewu", place:"Area Kota Malang", price:"400.000", unit:"/orang", days:"Private - min. 3 orang", rating:"4.8", image:"/trip-cards/tumpak-sewu.jpg", tag:"Free panorama kapas biru", href:"/trips/open-trip-tumpak-sewu"},
   {title:"Private Trip Pantai Malang", place:"Pantai Malang Selatan", price:"200.000", unit:"/orang", days:"Maks. 2 pantai", rating:"4.9", image:"/trip-cards/pantai-malang.webp", tag:"Bebas pilih pantai", href:"/trips/private-trip-pantai-malang"},
   {title:"Private Trip Bromo", place:"Meeting point Kota Malang", price:"1.800.000", unit:"/grup", days:"Private - Maks. 5 orang", rating:"4.9", image:"https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=1000&q=85", tag:"3 pilihan paket", href:"/trips/private-trip-bromo"},
 ];
