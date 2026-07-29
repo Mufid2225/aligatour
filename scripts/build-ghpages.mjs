@@ -5,7 +5,7 @@ const result = spawnSync("npm run build", {
   stdio: "inherit",
   env: {
     ...process.env,
-    NEXT_PUBLIC_SITE_BASE_PATH: "/aligatour_codex",
+    NEXT_PUBLIC_SITE_BASE_PATH: "/aligatour",
   },
 });
 
