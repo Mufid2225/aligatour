@@ -38,6 +38,9 @@ Belum tersedia CMS, akun pengguna, pembayaran online, atau informasi jadwal seca
 - Tautan media sosial dan email Aligatour
 - Metadata judul dan deskripsi pada halaman trip
 - Optimasi gambar melalui komponen `next/image`
+- Komponen carousel fan-style dengan GSAP
+- Galeri gambar di bagian About
+- Testimoni dalam grid responsif
 
 ## Teknologi
 
@@ -46,7 +49,8 @@ Belum tersedia CMS, akun pengguna, pembayaran online, atau informasi jadwal seca
 - TypeScript
 - Tailwind CSS 4
 - Phosphor Icons
-- Netlify
+- GSAP 3 (animasi)
+- Google Fonts (DM Sans, Manrope)
 
 ## Menjalankan project
 
@@ -67,10 +71,11 @@ Buka [http://localhost:3000](http://localhost:3000) di browser.
 ## Perintah
 
 ```bash
-npm run dev    # menjalankan development server
-npm run lint   # menjalankan ESLint
-npm run build  # membuat production build
-npm run start  # menjalankan production build
+npm run dev            # menjalankan development server
+npm run lint           # menjalankan ESLint
+npm run build          # membuat production build untuk Netlify
+npm run build:ghpages  # membuat static export untuk GitHub Pages
+npm run start          # menjalankan production build
 ```
 
 ## Struktur utama
@@ -78,20 +83,27 @@ npm run start  # menjalankan production build
 ```text
 src/app/                    Halaman dan layout App Router
 src/app/trips/              Halaman detail layanan
+src/components/ui/          Komponen UI (card-fan-carousel)
+scripts/                    Script build khusus (build-ghpages)
 public/brand/               Logo Aligatour
 public/trip-cards/          Gambar utama paket perjalanan
 public/facilities/          Gambar fasilitas perjalanan
 public/destinations/        Galeri destinasi per perjalanan
 public/pricelists/          Materi pricelist
 public/reference/           Materi referensi paket
+public/about-gallery/       Galeri foto bagian About
+.github/workflows/          Workflow GitHub Actions (static export)
 netlify.toml                Konfigurasi build Netlify
 ```
 
 ## Deployment
 
-Konfigurasi Netlify tersedia di `netlify.toml` dengan perintah build `npm run build` dan Node.js 22.
+### Netlify
+Konfigurasi tersedia di `netlify.toml` dengan perintah build `npm run build` dan Node.js 22.
 
-Untuk GitHub Pages, gunakan build statis dengan `npm run build:ghpages` agar aset memakai base path `aligatour`.
+### GitHub Pages
+Untuk static export ke GitHub Pages, jalankan `npm run build:ghpages`.  
+Branch `static` sudah dikonfigurasi dengan workflow GitHub Actions (`pages.yml`) yang otomatis build dan deploy setiap push.
 
 ## Kontak
 
