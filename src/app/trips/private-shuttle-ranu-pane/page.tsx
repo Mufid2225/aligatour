@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { withBasePath } from "@/lib/site-path";
 import { ArrowLeft, Bed, Bus, CheckCircle, ClockCountdown, MapPin, Mountains, UsersThree, WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata: Metadata = {
@@ -18,11 +19,11 @@ const vehicles = [
 ];
 
 const facilities = [
-  { title: "Snack & Drink", image: "/facilities/snack-drink.webp" },
-  { title: "Full Powerbank", image: "/facilities/powerbank.webp" },
-  { title: "Free Wi-Fi", image: "/facilities/wifi.webp" },
-  { title: "Insta360 X4 Air", note: "Terbatas", image: "/facilities/insta360-x4.webp" },
-  { title: "Dokumentasi", image: "/facilities/dokumentasi.webp" },
+  { title: "Snack & Drink", image: withBasePath("/facilities/snack-drink.webp") },
+  { title: "Full Powerbank", image: withBasePath("/facilities/powerbank.webp") },
+  { title: "Free Wi-Fi", image: withBasePath("/facilities/wifi.webp") },
+  { title: "Insta360 X4 Air", note: "Terbatas", image: withBasePath("/facilities/insta360-x4.webp") },
+  { title: "Dokumentasi", image: withBasePath("/facilities/dokumentasi.webp") },
 ];
 
 export default function PrivateShuttleRanuPanePage() {

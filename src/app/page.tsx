@@ -1,5 +1,6 @@
 ﻿import Image from "next/image";
 import CardFanCarousel from "@/components/ui/card-fan-carousel";
+import { withBasePath } from "@/lib/site-path";
 import { ArrowRight, Bus, CalendarBlank, CheckCircle, Compass, EnvelopeSimple, FacebookLogo, InstagramLogo, MapPin, Mountains, Star, TiktokLogo, UsersThree, WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
 
 const testimonials = [
@@ -12,34 +13,34 @@ const testimonials = [
 ];
 
 const aboutGallery = [
-  { imgUrl: "/about-gallery/rakum-view-01.webp", alt: "Pemandangan Ranu Kumbolo" },
-  { imgUrl: "/about-gallery/rakum-view-02.webp", alt: "Pemandangan Ranu Kumbolo" },
-  { imgUrl: "/about-gallery/rakum-view-04.webp", alt: "Pemandangan Ranu Kumbolo" },
-  { imgUrl: "/about-gallery/rakum-view-05.webp", alt: "Pemandangan Ranu Kumbolo" },
-  { imgUrl: "/about-gallery/rakum-view-06.webp", alt: "Pemandangan Ranu Kumbolo" },
-  { imgUrl: "/about-gallery/rakum-view-07.webp", alt: "Pemandangan Ranu Kumbolo" },
-  { imgUrl: "/about-gallery/rakum-view-08.webp", alt: "Pemandangan Ranu Kumbolo" },
-  { imgUrl: "/about-gallery/rakum-view-09.webp", alt: "Pemandangan Ranu Kumbolo" },
-  { imgUrl: "/about-gallery/lumajang-view-01.webp", alt: "Pemandangan Lumajang" },
-  { imgUrl: "/about-gallery/lumajang-view-02.webp", alt: "Pemandangan Lumajang" },
-  { imgUrl: "/about-gallery/lumajang-view-03.webp", alt: "Pemandangan Lumajang" },
-  { imgUrl: "/about-gallery/lumajang-view-04.webp", alt: "Pemandangan Lumajang" },
-  { imgUrl: "/about-gallery/lumajang-view-05.webp", alt: "Pemandangan Lumajang" },
-  { imgUrl: "/about-gallery/ragu-view-02.webp", alt: "Pemandangan Ranu Regulo" },
-  { imgUrl: "/about-gallery/ragu-view-03.webp", alt: "Pemandangan Ranu Regulo" },
-  { imgUrl: "/about-gallery/ragu-view-01.webp", alt: "Pemandangan Ranu Regulo" },
-  { imgUrl: "/about-gallery/bromo-view-01.webp", alt: "Pemandangan Bromo" },
-  { imgUrl: "/about-gallery/bromo-view-02.webp", alt: "Pemandangan Bromo" },
-  { imgUrl: "/about-gallery/bromo-view-03.webp", alt: "Pemandangan Bromo" },
-  { imgUrl: "/about-gallery/bromo-view-04.webp", alt: "Pemandangan Bromo" },
+  { imgUrl: withBasePath("/about-gallery/rakum-view-01.webp"), alt: "Pemandangan Ranu Kumbolo" },
+  { imgUrl: withBasePath("/about-gallery/rakum-view-02.webp"), alt: "Pemandangan Ranu Kumbolo" },
+  { imgUrl: withBasePath("/about-gallery/rakum-view-04.webp"), alt: "Pemandangan Ranu Kumbolo" },
+  { imgUrl: withBasePath("/about-gallery/rakum-view-05.webp"), alt: "Pemandangan Ranu Kumbolo" },
+  { imgUrl: withBasePath("/about-gallery/rakum-view-06.webp"), alt: "Pemandangan Ranu Kumbolo" },
+  { imgUrl: withBasePath("/about-gallery/rakum-view-07.webp"), alt: "Pemandangan Ranu Kumbolo" },
+  { imgUrl: withBasePath("/about-gallery/rakum-view-08.webp"), alt: "Pemandangan Ranu Kumbolo" },
+  { imgUrl: withBasePath("/about-gallery/rakum-view-09.webp"), alt: "Pemandangan Ranu Kumbolo" },
+  { imgUrl: withBasePath("/about-gallery/lumajang-view-01.webp"), alt: "Pemandangan Lumajang" },
+  { imgUrl: withBasePath("/about-gallery/lumajang-view-02.webp"), alt: "Pemandangan Lumajang" },
+  { imgUrl: withBasePath("/about-gallery/lumajang-view-03.webp"), alt: "Pemandangan Lumajang" },
+  { imgUrl: withBasePath("/about-gallery/lumajang-view-04.webp"), alt: "Pemandangan Lumajang" },
+  { imgUrl: withBasePath("/about-gallery/lumajang-view-05.webp"), alt: "Pemandangan Lumajang" },
+  { imgUrl: withBasePath("/about-gallery/ragu-view-02.webp"), alt: "Pemandangan Ranu Regulo" },
+  { imgUrl: withBasePath("/about-gallery/ragu-view-03.webp"), alt: "Pemandangan Ranu Regulo" },
+  { imgUrl: withBasePath("/about-gallery/ragu-view-01.webp"), alt: "Pemandangan Ranu Regulo" },
+  { imgUrl: withBasePath("/about-gallery/bromo-view-01.webp"), alt: "Pemandangan Bromo" },
+  { imgUrl: withBasePath("/about-gallery/bromo-view-02.webp"), alt: "Pemandangan Bromo" },
+  { imgUrl: withBasePath("/about-gallery/bromo-view-03.webp"), alt: "Pemandangan Bromo" },
+  { imgUrl: withBasePath("/about-gallery/bromo-view-04.webp"), alt: "Pemandangan Bromo" },
 ];
 
 const trips = [
-  {title:"Malang-Batu City Tour", place:"Malang & Kota Batu", price:"500.000", unit:"/mobil", days:"Private - 4 kursi", rating:"4.9", image:"/trip-cards/malang-batu-city-tour.webp", tag:"Bebas pilih destinasi", href:"/trips/malang-batu-city-tour"},
-  {title:"Private Shuttle Ranu Pane", place:"Malang -> Basecamp Ranu Pane", price:"8xx.xxx", unit:"/mobil", days:"PP - 1-10 kursi", rating:"4.9", image:"/trip-cards/private-shuttle-ranu-pane.webp", tag:"Gratis shelter H-1", href:"/trips/private-shuttle-ranu-pane"},
-  {title:"Private Trip Ranu Kumbolo", place:"Semeru, Jawa Timur", price:"2.200.000", unit:"/grup", days:"2 Hari 1 Malam - 2-4 orang", rating:"4.9", image:"/trip-cards/ranu-kumbolo.jpg", tag:"3 pilihan paket", href:"/trips/private-trip-ranu-kumbolo"},
-  {title:"Private Trip Tumpak Sewu", place:"Area Kota Malang", price:"400.000", unit:"/orang", days:"Private - min. 3 orang", rating:"4.8", image:"/trip-cards/tumpak-sewu.jpg", tag:"Free panorama kapas biru", href:"/trips/open-trip-tumpak-sewu"},
-  {title:"Private Trip Pantai Malang", place:"Pantai Malang Selatan", price:"200.000", unit:"/orang", days:"Maks. 2 pantai", rating:"4.9", image:"/trip-cards/pantai-malang.webp", tag:"Bebas pilih pantai", href:"/trips/private-trip-pantai-malang"},
+  {title:"Malang-Batu City Tour", place:"Malang & Kota Batu", price:"500.000", unit:"/mobil", days:"Private - 4 kursi", rating:"4.9", image:withBasePath("/trip-cards/malang-batu-city-tour.webp"), tag:"Bebas pilih destinasi", href:"/trips/malang-batu-city-tour"},
+  {title:"Private Shuttle Ranu Pane", place:"Malang -> Basecamp Ranu Pane", price:"8xx.xxx", unit:"/mobil", days:"PP - 1-10 kursi", rating:"4.9", image:withBasePath("/trip-cards/private-shuttle-ranu-pane.webp"), tag:"Gratis shelter H-1", href:"/trips/private-shuttle-ranu-pane"},
+  {title:"Private Trip Ranu Kumbolo", place:"Semeru, Jawa Timur", price:"2.200.000", unit:"/grup", days:"2 Hari 1 Malam - 2-4 orang", rating:"4.9", image:withBasePath("/trip-cards/ranu-kumbolo.jpg"), tag:"3 pilihan paket", href:"/trips/private-trip-ranu-kumbolo"},
+  {title:"Private Trip Tumpak Sewu", place:"Area Kota Malang", price:"400.000", unit:"/orang", days:"Private - min. 3 orang", rating:"4.8", image:withBasePath("/trip-cards/tumpak-sewu.jpg"), tag:"Free panorama kipas baru", href:"/trips/open-trip-tumpak-sewu"},
+  {title:"Private Trip Pantai Malang", place:"Pantai Malang Selatan", price:"200.000", unit:"/orang", days:"Maks. 2 pantai", rating:"4.9", image:withBasePath("/trip-cards/pantai-malang.webp"), tag:"Bebas pilih pantai", href:"/trips/private-trip-pantai-malang"},
   {title:"Private Trip Bromo", place:"Meeting point Kota Malang", price:"1.800.000", unit:"/grup", days:"Private - Maks. 5 orang", rating:"4.9", image:"https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=1000&q=85", tag:"3 pilihan paket", href:"/trips/private-trip-bromo"},
 ];
 
@@ -48,7 +49,7 @@ export default function Home() {
     <header className="absolute z-20 w-full py-5 text-white">
       <div className="container flex items-center justify-between">
         <a href="#" className="flex items-center gap-2.5" aria-label="Aligatour - Beranda">
-          <Image src="/brand/logo-aligatour.webp" alt="Logo Aligatour" width={58} height={58} priority className="h-14.5 w-14.5 object-contain" />
+          <Image src={withBasePath("/brand/logo-aligatour.webp")} alt="Logo Aligatour" width={58} height={58} priority className="h-14.5 w-14.5 object-contain" />
           <span className="display hidden text-xl font-extrabold tracking-tight sm:block">Aliga<span className="text-[#d8f05a]">tour.</span></span>
         </a>
         <nav className="desktop-nav flex items-center gap-8 text-sm font-semibold"><a href="#trip">Paket Trip</a><a href="#about">Tentang Kami</a><a href="#review">Cerita Traveler</a><a href="#contact">Kontak</a></nav>
@@ -107,6 +108,6 @@ export default function Home() {
     </div></section>
 
     <section id="contact" className="container mb-8 overflow-hidden rounded-4xl bg-[#153d37] px-7 py-16 text-center text-white sm:px-16"><p className="text-sm font-bold uppercase tracking-[.2em] text-[#d8f05a]">Siap berangkat?</p><h2 className="mt-4 text-4xl font-extrabold sm:text-5xl">Cerita barumu menunggu.</h2><p className="mx-auto mt-4 max-w-xl text-white/70">Konsultasikan city tour, shuttle, trip alam, atau perjalanan antar kota bersama tim Aligatour.</p><div className="mt-8 flex flex-wrap justify-center gap-3"><a href="https://wa.me/628563532918" className="btn-primary"><WhatsappLogo size={21} weight="fill"/> Chat via WhatsApp</a><a href="https://www.instagram.com/aligatour.malang" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/30 px-5 py-3 font-bold"><InstagramLogo size={21} weight="fill"/> @aligatour.malang</a></div></section>
-    <footer className="border-t border-[#e4e9e2] py-10"><div className="container"><div className="flex flex-wrap items-center justify-between gap-8"><a href="#" className="flex items-center gap-3"><Image src="/brand/logo-aligatour.webp" alt="Logo Aligatour" width={58} height={58} className="h-14.5 w-14.5 object-contain"/><span><b className="display block text-xl text-[#153d37]">Aligatour</b><small className="text-[#6d7d78]">Tour and Travel</small></span></a><div><b className="text-sm text-[#153d37]">Hubungi & ikuti kami</b><div className="mt-4 flex max-w-2xl flex-wrap gap-x-5 gap-y-3 text-sm"><a href="mailto:aligatourmalang@gmail.com" className="flex items-center gap-1.5 text-[#51635e] hover:text-[#176b5b]"><EnvelopeSimple size={19}/> aligatourmalang@gmail.com</a><a href="https://www.instagram.com/aligatour.malang" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-[#51635e] hover:text-[#176b5b]"><InstagramLogo size={19}/> @aligatour.malang</a><a href="https://www.facebook.com/aligatourmalang" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-[#51635e] hover:text-[#176b5b]"><FacebookLogo size={19}/> Aligatour Malang</a><a href="https://www.tiktok.com/@aligatourtravel?_r=1&_t=ZS-97yJLIhJJoL" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-[#51635e] hover:text-[#176b5b]"><TiktokLogo size={19}/> @aligatourtravel</a></div></div></div><div className="mt-8 border-t border-[#e4e9e2] pt-5 text-center text-xs text-[#81908c] sm:text-left">(c) 2026 Aligatour - City Tour Specialist Malang-Batu</div></div></footer>
+    <footer className="border-t border-[#e4e9e2] py-10"><div className="container"><div className="flex flex-wrap items-center justify-between gap-8"><a href="#" className="flex items-center gap-3"><Image src={withBasePath("/brand/logo-aligatour.webp")} alt="Logo Aligatour" width={58} height={58} className="h-14.5 w-14.5 object-contain"/><span><b className="display block text-xl text-[#153d37]">Aligatour</b><small className="text-[#6d7d78]">Tour and Travel</small></span></a><div><b className="text-sm text-[#153d37]">Hubungi & ikuti kami</b><div className="mt-4 flex max-w-2xl flex-wrap gap-x-5 gap-y-3 text-sm"><a href="mailto:aligatourmalang@gmail.com" className="flex items-center gap-1.5 text-[#51635e] hover:text-[#176b5b]"><EnvelopeSimple size={19}/> aligatourmalang@gmail.com</a><a href="https://www.instagram.com/aligatour.malang" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-[#51635e] hover:text-[#176b5b]"><InstagramLogo size={19}/> @aligatour.malang</a><a href="https://www.facebook.com/aligatourmalang" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-[#51635e] hover:text-[#176b5b]"><FacebookLogo size={19}/> Aligatour Malang</a><a href="https://www.tiktok.com/@aligatourtravel?_r=1&_t=ZS-97yJLIhJJoL" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-[#51635e] hover:text-[#176b5b]"><TiktokLogo size={19}/> @aligatourtravel</a></div></div></div><div className="mt-8 border-t border-[#e4e9e2] pt-5 text-center text-xs text-[#81908c] sm:text-left">(c) 2026 Aligatour - City Tour Specialist Malang-Batu</div></div></footer>
   </main>;
 }

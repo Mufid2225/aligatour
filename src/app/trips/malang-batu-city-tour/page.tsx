@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { withBasePath } from "@/lib/site-path";
 import { ArrowLeft, Camera, Car, CheckCircle, MapPin, Sparkle, UsersThree, WhatsappLogo, X } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata: Metadata = {
@@ -23,16 +24,16 @@ const vehicles = [
 ];
 
 const facilities = [
-  { title: "Welcome Snack & Drink", image: "/facilities/snack-drink.webp" },
-  { title: "Full Powerbank", image: "/facilities/powerbank.webp" },
-  { title: "Free Wi-Fi", image: "/facilities/wifi.webp" },
-  { title: "Photographer", note: "+Rp350.000", image: "/facilities/dokumentasi.webp" },
+  { title: "Welcome Snack & Drink", image: withBasePath("/facilities/snack-drink.webp") },
+  { title: "Full Powerbank", image: withBasePath("/facilities/powerbank.webp") },
+  { title: "Free Wi-Fi", image: withBasePath("/facilities/wifi.webp") },
+  { title: "Photographer", note: "+Rp350.000", image: withBasePath("/facilities/dokumentasi.webp") },
 ];
 
 export default function CityTourPage() {
   return <main className="min-h-screen bg-[#fbfcf8]">
     <section className="relative min-h-[590px] overflow-hidden bg-[#153d37] text-white">
-      <Image src="/trip-cards/malang-batu-city-tour.webp" alt="Destinasi Malang Batu City Tour" fill priority className="object-cover opacity-60"/>
+      <Image src={withBasePath("/trip-cards/malang-batu-city-tour.webp")} alt="Destinasi Malang Batu City Tour" fill priority className="object-cover opacity-60"/>
       <div className="absolute inset-0 bg-gradient-to-r from-[#102f2b]/95 via-[#102f2b]/70 to-[#102f2b]/25"/>
       <div className="container relative z-10 py-7"><Link href="/" className="inline-flex items-center gap-2 text-sm font-bold text-white/80"><ArrowLeft/> Kembali ke beranda</Link></div>
       <div className="container relative z-10 pb-20 pt-20"><span className="inline-flex items-center gap-2 rounded-full bg-[#d8f05a] px-4 py-2 text-xs font-extrabold uppercase tracking-wider text-[#153d37]"><Sparkle weight="fill"/> Free to choose the destinations</span><h1 className="mt-6 max-w-4xl text-5xl font-extrabold tracking-[-.04em] sm:text-7xl">Malang–Batu<br/>City Tour</h1><p className="mt-5 max-w-2xl text-lg leading-8 text-white/75">Have a great city tour experience with Aligatour! Kamu bebas menentukan destinasi sesuai gaya perjalananmu.</p><div className="mt-8 flex flex-wrap items-end gap-7"><div><small className="text-white/60">Mulai dari · untuk 4 kursi</small><p className="text-3xl font-extrabold text-[#d8f05a]">Rp500.000</p></div><a href="#pricelist" className="btn-primary">Lihat pilihan mobil <Car size={20} weight="fill"/></a></div></div>

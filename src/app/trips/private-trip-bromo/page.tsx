@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { withBasePath } from "@/lib/site-path";
 import { ArrowLeft, CalendarCheck, Check, CheckCircle, MapPin, Mountains, UsersThree, WhatsappLogo, X } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata: Metadata = {
@@ -12,14 +13,14 @@ const destinations = ["Sunrise Point", "Lembah Widodaren", "Pura Luhur Poten", "
 const includes = ["7 destinasi wisata", "Transportasi pulang-pergi", "Jeep Bromo", "Tiket masuk Bromo", "Driver & BBM", "Biaya parkir", "Dokumentasi—all files"];
 const features = ["Dokumentasi", "Welcome Snack & Drink", "Full Powerbank", "Free Wi-Fi", "Insta360 X4 Air / Ace Pro 2", "Gimbal", "Handwarmer", "Guest House", "Professional Massage (2 pax)"];
 const facilityCards = [
-  { title: "Snack & Drink", images: ["/facilities/snack-drink.webp"] },
-  { title: "Full Powerbank", images: ["/facilities/powerbank.webp"] },
-  { title: "Free Wi-Fi", images: ["/facilities/wifi.webp"] },
-  { title: "Insta360 X4 Air / Insta360 Ace Pro 2", images: ["/facilities/insta360-x4.webp", "/facilities/insta360-ace.webp"] },
-  { title: "Gimbal", images: ["/facilities/gimbal.webp"] },
-  { title: "Handwarmer", images: ["/facilities/handwarmer.webp"] },
-  { title: "All Files & Edited Photos", images: ["/facilities/dokumentasi.webp"] },
-  { title: "Cinematic Video", images: ["/facilities/cinematic.webp"] },
+  { title: "Snack & Drink", images: [withBasePath("/facilities/snack-drink.webp")] },
+  { title: "Full Powerbank", images: [withBasePath("/facilities/powerbank.webp")] },
+  { title: "Free Wi-Fi", images: [withBasePath("/facilities/wifi.webp")] },
+  { title: "Insta360 X4 Air / Insta360 Ace Pro 2", images: [withBasePath("/facilities/insta360-x4.webp"), withBasePath("/facilities/insta360-ace.webp")] },
+  { title: "Gimbal", images: [withBasePath("/facilities/gimbal.webp")] },
+  { title: "Handwarmer", images: [withBasePath("/facilities/handwarmer.webp")] },
+  { title: "All Files & Edited Photos", images: [withBasePath("/facilities/dokumentasi.webp")] },
+  { title: "Cinematic Video", images: [withBasePath("/facilities/cinematic.webp")] },
 ];
 const packages = [
   {name:"Ekonomis", price:"1.800K", caption:"Esensial untuk menjelajah Bromo", unavailable:["Free Wi-Fi", "Insta360 X4 Air / Ace Pro 2", "Gimbal", "Handwarmer", "Guest House", "Professional Massage (2 pax)"]},
@@ -29,9 +30,9 @@ const packages = [
 
 export default function PrivateTripBromo() {
   return <main className="min-h-screen bg-[#fbfcf8]">
-    <section className="relative min-h-[570px] overflow-hidden bg-[#153d37] text-white">
+    <section className="relative min-h-142.5 overflow-hidden bg-[#153d37] text-white">
       <Image src="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=2000&q=90" alt="Pemandangan Gunung Bromo" fill priority className="object-cover opacity-60"/>
-      <div className="absolute inset-0 bg-gradient-to-r from-[#102f2b]/95 via-[#102f2b]/70 to-[#102f2b]/20"/>
+      <div className="absolute inset-0 bg-linear-to-r from-[#102f2b]/95 via-[#102f2b]/70 to-[#102f2b]/20"/>
       <div className="container relative z-10 py-7"><Link href="/" className="inline-flex items-center gap-2 text-sm font-bold text-white/80"><ArrowLeft/> Kembali ke beranda</Link></div>
       <div className="container relative z-10 pb-20 pt-20">
         <span className="rounded-full bg-[#d8f05a] px-4 py-2 text-xs font-extrabold uppercase tracking-wider text-[#153d37]">Private Trip · Maksimal 5 Orang</span>

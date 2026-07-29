@@ -91,6 +91,8 @@ netlify.toml                Konfigurasi build Netlify
 
 Konfigurasi Netlify tersedia di `netlify.toml` dengan perintah build `npm run build` dan Node.js 22.
 
+Untuk GitHub Pages, gunakan build statis dengan `npm run build:ghpages` agar aset memakai base path repo `aligatour_codex`.
+
 ## Kontak
 
 - WhatsApp: [+62 856-3532-918](https://wa.me/628563532918)

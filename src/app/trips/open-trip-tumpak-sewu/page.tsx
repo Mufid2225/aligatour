@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { withBasePath } from "@/lib/site-path";
 import { ArrowLeft, CalendarCheck, Camera, CheckCircle, MapPin, UsersThree, WhatsappLogo, X } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata: Metadata = { title: "Private Trip Tumpak Sewu | Aligatour", description: "Private Trip Tumpak Sewu mulai Rp400.000 per orang dengan meeting point Area Kota Malang, destinasi Tumpak Sewu, Goa Tetes, Telaga Biru, dan fasilitas dokumentasi lengkap." };
@@ -9,15 +10,15 @@ const destinations = ["Panorama Tumpak Sewu", "Goa Tetes", "Dasar Air Terjun Tum
 const includes = ["Transportasi PP area Malang - Tumpak Sewu", "Driver, BBM, & biaya parkir", "Tour guide", "Tiket masuk Tumpak Sewu", "Dokumentasi foto & video (all file)"];
 const facilities = ["Snack & drink", "Full power bank", "Free Wi-Fi", "Insta360 X4 Air / Insta360 Ace Pro 2", "Photographer", "Edited photos", "Cinematic video"];
 const gallery = [
-  { src: "/trip-cards/tumpak-sewu.jpg", alt: "Tumpak Sewu" },
-  { src: "/pricelists/tumpak-sewu.jpeg", alt: "Pricelist Tumpak Sewu" },
-  { src: "/trip-cards/tumpak-sewu.jpg", alt: "Tumpak Sewu kedua" },
+  { src: withBasePath("/trip-cards/tumpak-sewu.jpg"), alt: "Tumpak Sewu" },
+  { src: withBasePath("/pricelists/tumpak-sewu.jpeg"), alt: "Pricelist Tumpak Sewu" },
+  { src: withBasePath("/trip-cards/tumpak-sewu.jpg"), alt: "Tumpak Sewu kedua" },
 ];
 
 export default function OpenTripTumpakSewuPage() {
   return <main className="min-h-screen bg-[#fbfcf8]">
     <section className="relative min-h-142.5 overflow-hidden bg-[#153d37] text-white">
-      <Image src="/trip-cards/tumpak-sewu.jpg" alt="Air Terjun Tumpak Sewu" fill priority sizes="100vw" className="object-cover opacity-60"/>
+      <Image src={withBasePath("/trip-cards/tumpak-sewu.jpg")} alt="Air Terjun Tumpak Sewu" fill priority sizes="100vw" className="object-cover opacity-60"/>
       <div className="absolute inset-0 bg-linear-to-r from-[#102f2b]/95 via-[#102f2b]/70 to-[#102f2b]/20"/>
       <div className="container relative z-10 py-7"><Link href="/" className="inline-flex items-center gap-2 text-sm font-bold text-white/80"><ArrowLeft/> Kembali ke beranda</Link></div>
       <div className="container relative z-10 pb-20 pt-20">
