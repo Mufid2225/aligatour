@@ -24,7 +24,7 @@ export default function CardFanCarousel({ cards }: CardFanCarouselProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const animatingRef = useRef(false);
   const firstRenderRef = useRef(true);
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const timerRef = useRef<number | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const cycle = useCallback((step: number) => {
@@ -34,14 +34,14 @@ export default function CardFanCarousel({ cards }: CardFanCarouselProps) {
   }, [cards.length]);
 
   const resetTimer = useCallback(() => {
-    if (timerRef.current) clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => cycle(1), 5000);
+    if (timerRef.current) cancelAnimationFrame(timerRef.current);
+    timerRef.current = requestAnimationFrame(() => cycle(1));
   }, [cycle]);
 
   useEffect(() => {
     if (cards.length < 2) return;
     resetTimer();
-    return () => { if (timerRef.current) clearInterval(timerRef.current); };
+    return () => { if (timerRef.current) cancelAnimationFrame(timerRef.current); };
   }, [cards.length, resetTimer]);
 
   useEffect(() => {
@@ -65,7 +65,7 @@ export default function CardFanCarousel({ cards }: CardFanCarouselProps) {
     elements.forEach((element, index) => {
       const slot = visible.indexOf(index);
       if (slot === -1) {
-        gsap.to(element, { opacity: 0, scale: 0.65, duration: 0.3, pointerEvents: "none" });
+        gsap.to(element, { opacity: 0, scale: 0.65, duration: 0.3, pointerEvents: "none", overwrite: true });
         return;
       }
 
@@ -84,6 +84,7 @@ export default function CardFanCarousel({ cards }: CardFanCarouselProps) {
         duration: firstRenderRef.current ? 0.9 : 0.55,
         delay: firstRenderRef.current ? slot * 0.08 : 0,
         ease: firstRenderRef.current ? "back.out(1.4)" : "power2.out",
+        overwrite: true,
         onComplete: () => {
           completed += 1;
           if (completed === Math.min(cards.length, 3)) animatingRef.current = false;

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Manrope } from "next/font/google";
 import { withBasePath } from "@/lib/site-path";
+import { LanguageProvider } from "@/lib/i18n";
 import "./globals.css";
 
 const dmSans = DM_Sans({ variable: "--font-body", subsets: ["latin"] });
@@ -13,5 +14,11 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="id"><body className={`${dmSans.variable} ${manrope.variable}`}>{children}</body></html>;
+  return (
+    <html lang="id">
+      <body className={`${dmSans.variable} ${manrope.variable}`}>
+        <LanguageProvider>{children}</LanguageProvider>
+      </body>
+    </html>
+  );
 }
