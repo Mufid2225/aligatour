@@ -27,11 +27,17 @@ src/
 │       ├── malang-batu-city-tour/page.tsx
 │       ├── private-shuttle-ranu-pane/page.tsx
 │       ├── private-trip-ranu-kumbolo/page.tsx
-│       ├── open-trip-tumpak-sewu/page.tsx
-│       ├── private-trip-pantai-malang/page.tsx
+│       ├── private-trip-tumpak-sewu/page.tsx
+│       ├── private-trip-ranu-regulo/page.tsx
 │       └── private-trip-bromo/page.tsx
 ├── components/ui/
-│   └── card-fan-carousel.tsx  # Fan-style carousel component
+│   ├── card-fan-carousel.tsx  # Fan-style carousel component
+│   ├── trip-image-carousel.tsx
+│   ├── trip-detail-header.tsx
+│   └── language-toggle.tsx    # ID/EN language switch
+├── components/trips/          # Trip detail content components
+├── lib/
+│   └── i18n.tsx               # Language context + ID/EN dictionary
 public/
 ├── brand/                  # Logo
 ├── trip-cards/             # Trip hero/card images
@@ -65,8 +71,8 @@ npm run lint    # eslint
 | `/trips/malang-batu-city-tour` | City Tour detail + vehicle pricelist |
 | `/trips/private-shuttle-ranu-pane` | Shuttle detail + vehicle pricelist |
 | `/trips/private-trip-ranu-kumbolo` | Ranu Kumbolo packages (Ekonomis/Exclusive/Luxury) |
-| `/trips/open-trip-tumpak-sewu` | Open Trip Tumpak Sewu detail |
-| `/trips/private-trip-pantai-malang` | Private Pantai Malang detail + beach gallery |
+| `/trips/private-trip-tumpak-sewu` | Private Trip Tumpak Sewu detail |
+| `/trips/private-trip-ranu-regulo` | Private Ranu Regulo detail + facilities |
 | `/trips/private-trip-bromo` | Bromo packages (Ekonomis/Premium/Luxury) |
 
 ## CSS Design Tokens (globals.css)
@@ -114,6 +120,7 @@ npm run lint    # eslint
 - Social media links (Instagram, Facebook, TikTok, Email)
 - SEO metadata per page
 - Image optimization via next/image
+- **i18n (ID/EN) with sessionStorage persistence**
 
 ## Not Implemented
 - CMS / content management

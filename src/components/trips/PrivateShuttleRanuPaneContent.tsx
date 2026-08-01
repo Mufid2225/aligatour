@@ -1,0 +1,246 @@
+"use client";
+
+import Image from "next/image";
+import { Bed, Bus, CheckCircle, ClockCountdown, MapPin, Mountains, UsersThree, WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
+import TripDetailHeader from "@/components/ui/trip-detail-header";
+import { useT } from "@/lib/i18n";
+
+const vehicles = [
+  { unit: "Jimny Katana", min: 1, max: 2, price: "Rp800.000" },
+  { unit: "Avanza", min: 1, max: 4, price: "Rp1.200.000" },
+  { unit: "Innova", min: 1, max: 6, price: "Rp1.500.000" },
+  { unit: "Fortuner", min: 1, max: 6, price: "Rp1.500.000" },
+  { unit: "Jeep Hardtop", min: 1, max: 7, price: "Rp1.800.000" },
+  { unit: "HiAce", min: 1, max: 10, price: "Rp2.500.000" },
+];
+
+const facilities = [
+  { title: "Snack & Drink", image: "/facilities/snack-drink.webp" },
+  { title: "Full Powerbank", image: "/facilities/powerbank.webp" },
+  { title: "Free Wi-Fi", image: "/facilities/wifi.webp" },
+  { title: "Insta360 X4 Air", noteKey: "limited", image: "/facilities/insta360-x4.webp" },
+  { title: "Dokumentasi", image: "/facilities/dokumentasi.webp" },
+];
+
+const shelterItems = [
+  "Gratis untuk pelanggan shuttle",
+  "Cocok untuk kedatangan H-1",
+  "Berada di area Kota Malang",
+  "Konfirmasi ketersediaan saat reservasi",
+];
+
+export default function PrivateShuttleRanuPaneContent() {
+  const t = useT();
+  return (
+    <main className="min-h-screen bg-[#fbfcf8]">
+      <section className="relative min-h-[610px] overflow-hidden bg-[#153d37] text-white">
+        <Image
+          src="https://images.unsplash.com/photo-1602154663343-89fe0bf541ab?auto=format&fit=crop&w=2000&q=90"
+          alt="Perjalanan menuju Basecamp Ranu Pane"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-55"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#102f2b]/95 via-[#102f2b]/70 to-[#102f2b]/20" />
+        <TripDetailHeader />
+        <div className="container relative z-10 pb-20 pt-16">
+          <span className="inline-flex items-center gap-2 rounded-full bg-[#d8f05a] px-4 py-2 text-xs font-extrabold uppercase tracking-wider text-[#153d37]">
+            <Bus weight="fill" /> {t("shHeroTag")}
+          </span>
+          <h1 className="mt-6 max-w-4xl text-5xl font-extrabold tracking-[-.04em] sm:text-7xl">
+            Malang <span className="text-[#d8f05a]">↔</span><br />
+            Basecamp Ranu Pane
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/75">{t("shHeroDesc")}</p>
+          <div className="mt-8 flex flex-wrap items-end gap-7">
+            <div>
+              <small className="text-white/60">{t("shHeroUnitLabel")}</small>
+              <p className="text-3xl font-extrabold text-[#d8f05a]">{t("shHeroSeatLabel")}</p>
+            </div>
+            <a href="#pricelist" className="btn-primary">
+              {t("shHeroBtn")} <Bus size={20} weight="fill" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative z-10 -mt-9">
+        <div className="container">
+          <div className="grid overflow-hidden rounded-2xl bg-white shadow-2xl shadow-[#153d3720] sm:grid-cols-3">
+            {([
+              [MapPin, t("shQuickPickup"), t("shQuickPickupVal")],
+              [Mountains, t("shQuickDest"), t("shQuickDestVal")],
+              [ClockCountdown, t("shQuickDuration"), t("shQuickDurationVal")],
+            ] as [React.ComponentType<{ size?: number; weight?: string; className?: string }>, string, string][]).map(([Icon, label, value]) => (
+              <div
+                key={label}
+                className="flex items-center gap-4 border-b border-[#e8ece6] p-6 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0"
+              >
+                <Icon size={27} weight="fill" className="shrink-0 text-[#176b5b]" />
+                <div>
+                  <small className="text-[#81908c]">{label}</small>
+                  <b className="block">{value}</b>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24">
+        <div className="container grid items-center gap-12 lg:grid-cols-[.8fr_1.2fr]">
+          <div>
+            <p className="eyebrow">{t("shFacEyebrow")}</p>
+            <h2 className="mt-3 text-4xl font-extrabold">{t("shFacTitle")}</h2>
+            <p className="mt-5 leading-7 text-[#6d7d78]">{t("shFacDesc")}</p>
+          </div>
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+            {facilities.map((item) => (
+              <article
+                key={item.title}
+                className="overflow-hidden rounded-xl border border-[#dfe6df] bg-white"
+              >
+                <div className="relative h-32 bg-[#f3f1e8]">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    sizes="(max-width: 640px) 50vw, 210px"
+                    className="object-contain p-3"
+                  />
+                </div>
+                <div className="min-h-20 p-4">
+                  <b className="text-sm">{item.title}</b>
+                  {item.noteKey && (
+                    <span className="mt-1 block text-xs font-bold text-[#176b5b]">
+                      {t(item.noteKey)}
+                    </span>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#153d37] py-20 text-white">
+        <div className="container grid items-center gap-10 lg:grid-cols-[1.15fr_.85fr]">
+          <div>
+            <p className="text-xs font-extrabold uppercase tracking-[.18em] text-[#d8f05a]">
+              {t("shH1Tag")}
+            </p>
+            <h2 className="mt-3 text-4xl font-extrabold sm:text-5xl">
+              {t("shH1Title1")}<br />
+              {t("shH1Title2")}
+            </h2>
+            <p className="mt-5 max-w-xl leading-7 text-white/65">{t("shH1Desc")}</p>
+            <p className="mt-5 text-xs font-bold uppercase tracking-wider text-white/45">
+              {t("shH1Note")}
+            </p>
+          </div>
+          <div className="rounded-[28px] border border-white/15 bg-white/5 p-8">
+            <Bed size={48} weight="fill" className="text-[#d8f05a]" />
+            <h3 className="mt-5 text-2xl font-extrabold">{t("shH1ShelterTitle")}</h3>
+            <div className="mt-6 space-y-4">
+              {shelterItems.map((item) => (
+                <div key={item} className="flex gap-3">
+                  <CheckCircle size={21} weight="fill" className="shrink-0 text-[#d8f05a]" />
+                  <span className="text-white/80">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricelist" className="bg-[#f0f0e5] py-24">
+        <div className="container">
+          <div className="mb-10 flex flex-wrap items-end justify-between gap-5">
+            <div>
+              <p className="eyebrow">{t("shPriceEyebrow")}</p>
+              <h2 className="mt-3 text-4xl font-extrabold">{t("shPriceTitle")}</h2>
+              <p className="mt-3 text-[#6d7d78]">{t("shPriceDesc")}</p>
+            </div>
+            <div className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-bold">
+              <UsersThree size={21} className="text-[#176b5b]" />
+              {t("shPriceMaxSeat")}
+            </div>
+          </div>
+          <div className="overflow-hidden rounded-2xl border border-[#d9dfd6] bg-white">
+            <div className="hidden grid-cols-[1.4fr_.7fr_.7fr_auto] gap-4 bg-[#153d37] px-6 py-4 text-xs font-extrabold uppercase tracking-wider text-white md:grid">
+              <span>{t("shPriceColUnit")}</span>
+              <span>{t("shPriceColCapacity")}</span>
+              <span>{t("shPriceColPP")}</span>
+              <span></span>
+            </div>
+            {vehicles.map((vehicle, index) => (
+              <div
+                key={vehicle.unit}
+                className={`grid items-center gap-3 px-5 py-5 md:grid-cols-[1.4fr_.7fr_.7fr_auto] md:gap-4 md:px-6 ${
+                  index !== vehicles.length - 1 ? "border-b border-[#e6eae4]" : ""
+                }`}
+              >
+                <div>
+                  <span className="mb-1 block text-xs font-bold uppercase tracking-wider text-[#81908c] md:hidden">
+                    {t("shPriceColUnit")}
+                  </span>
+                  <b>{vehicle.unit}</b>
+                </div>
+                <div>
+                  <span className="mr-2 text-xs font-bold uppercase tracking-wider text-[#81908c] md:hidden">
+                    {t("shPriceCapLabel")}
+                  </span>
+                  <span className="text-sm text-[#5e706a]">{vehicle.min}–{vehicle.max} {t("seats")}</span>
+                </div>
+                <div>
+                  <span className="mr-2 text-xs font-bold uppercase tracking-wider text-[#81908c] md:hidden">
+                    {t("shPricePriceLabel")}
+                  </span>
+                  <b className="text-[#176b5b]">{vehicle.price}</b>
+                </div>
+                <a
+                  href={`https://wa.me/628563532918?text=${encodeURIComponent(`Halo Aligatour, saya tertarik Private Shuttle Malang–Ranu Pane PP menggunakan ${vehicle.unit} (${vehicle.min}–${vehicle.max} ${t("seats")}).`)}`}
+                  className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[#153d37] px-4 py-2.5 text-xs font-bold text-white md:mt-0"
+                >
+                  <WhatsappLogo size={17} weight="fill" /> {t("pickUnit")}
+                </a>
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-xs leading-5 text-[#73827e]">{t("shPriceNote")}</p>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="container grid gap-6 md:grid-cols-[.8fr_1.2fr]">
+          <div className="rounded-[26px] bg-[#eef1e6] p-7">
+            <h2 className="text-2xl font-extrabold">{t("include")}</h2>
+            <div className="mt-6 space-y-4">
+              {[t("shInclude1"), t("shInclude2"), t("shInclude3"), t("shInclude4")].map((item) => (
+                <div key={item} className="flex items-center gap-3">
+                  <CheckCircle size={22} weight="fill" className="text-[#176b5b]" />
+                  <b>{item}</b>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-[26px] bg-[#d8f05a] p-8 sm:p-10">
+            <div className="flex items-center gap-2 font-bold">
+              <Mountains size={23} weight="fill" />
+              {t("shCtaTag")}
+            </div>
+            <h2 className="mt-3 text-3xl font-extrabold">{t("shCtaTitle")}</h2>
+            <p className="mt-3 max-w-xl text-[#38564f]">{t("shCtaDesc")}</p>
+            <a
+              href="https://wa.me/628563532918?text=Halo%20Aligatour%2C%20saya%20ingin%20konsultasi%20Private%20Shuttle%20Malang-Ranu%20Pane."
+              className="btn-dark mt-7"
+            >
+              <WhatsappLogo size={20} weight="fill" /> {t("bookYourTrip")}
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}

@@ -13,8 +13,8 @@ Belum tersedia CMS, akun pengguna, pembayaran online, atau informasi jadwal seca
 - Malang–Batu City Tour
 - Private Shuttle Malang–Ranu Pane
 - Private Trip Ranu Kumbolo
-- Open Trip Tumpak Sewu
-- Private Trip Pantai Malang
+- Private Trip Tumpak Sewu
+- Private Trip Ranu Regulo
 - Private Trip Bromo
 
 ## Halaman
@@ -25,8 +25,8 @@ Belum tersedia CMS, akun pengguna, pembayaran online, atau informasi jadwal seca
 | `/trips/malang-batu-city-tour` | Detail dan pilihan kendaraan City Tour Malang–Batu |
 | `/trips/private-shuttle-ranu-pane` | Detail shuttle private Malang–Ranu Pane |
 | `/trips/private-trip-ranu-kumbolo` | Detail dan pilihan paket Ranu Kumbolo |
-| `/trips/open-trip-tumpak-sewu` | Detail Open Trip Tumpak Sewu |
-| `/trips/private-trip-pantai-malang` | Detail Private Trip Pantai Malang Selatan |
+| `/trips/private-trip-tumpak-sewu` | Detail Private Trip Tumpak Sewu |
+| `/trips/private-trip-ranu-regulo` | Detail Private Trip Ranu Regulo |
 | `/trips/private-trip-bromo` | Detail dan pilihan paket Bromo |
 
 ## Fitur yang tersedia
@@ -38,6 +38,7 @@ Belum tersedia CMS, akun pengguna, pembayaran online, atau informasi jadwal seca
 - Tautan media sosial dan email Aligatour
 - Metadata judul dan deskripsi pada halaman trip
 - Optimasi gambar melalui komponen `next/image`
+- Bilingual (Indonesia / English) dengan penyimpanan bahasa di session
 
 ## Teknologi
 
