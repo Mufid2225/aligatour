@@ -24,7 +24,7 @@ export default function CardFanCarousel({ cards }: CardFanCarouselProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const animatingRef = useRef(false);
   const firstRenderRef = useRef(true);
-  const timerRef = useRef<number | null>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const cycle = useCallback((step: number) => {
@@ -34,14 +34,15 @@ export default function CardFanCarousel({ cards }: CardFanCarouselProps) {
   }, [cards.length]);
 
   const resetTimer = useCallback(() => {
-    if (timerRef.current) cancelAnimationFrame(timerRef.current);
-    timerRef.current = requestAnimationFrame(() => cycle(1));
+    if (timerRef.current) clearInterval(timerRef.current);
+    // Auto-slide setiap 5 detik
+    timerRef.current = setInterval(() => cycle(1), 5000);
   }, [cycle]);
 
   useEffect(() => {
     if (cards.length < 2) return;
     resetTimer();
-    return () => { if (timerRef.current) cancelAnimationFrame(timerRef.current); };
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
   }, [cards.length, resetTimer]);
 
   useEffect(() => {
@@ -111,7 +112,7 @@ export default function CardFanCarousel({ cards }: CardFanCarouselProps) {
       <div className="relative z-10 mt-3 flex items-center gap-3 sm:mt-4" style={{ gap: `${r.gapG}px` }}>
         <button type="button" onClick={() => { cycle(-1); resetTimer(); }} aria-label="Foto sebelumnya" className="flex cursor-pointer items-center justify-center rounded-full border border-[#153d37]/15 bg-white font-bold shadow transition hover:-translate-y-0.5 hover:border-[#176b5b]" style={{ width: `${r.btnS}px`, height: `${r.btnS}px`, fontSize: `${r.btnS * 0.5}px` }}>←</button>
         <div className="flex gap-1.5 sm:gap-2" aria-label={`Foto ${activeIndex + 1} dari ${cards.length}`}>
-          {cards.map((card, index) => <button key={card.imgUrl} type="button" onClick={() => { if (!animatingRef.current) { setActiveIndex(index); resetTimer(); } }} aria-label={`Tampilkan foto ${index + 1}`} className={`h-1.5 cursor-pointer rounded-full transition-all sm:h-2 ${index === activeIndex ? "w-4 bg-[#176b5b] sm:w-5" : "w-1.5 bg-[#153d37]/20 sm:w-2"}`}/>) }
+          {cards.map((card, index) => <button key={card.imgUrl} type="button" onClick={() => { if (!animatingRef.current) { setActiveIndex(index); resetTimer(); } }} aria-label={`Tampilkan foto ${index + 1}`} className={`h-1.5 cursor-pointer rounded-full transition-all sm:h-2 ${index === activeIndex ? "w-4 bg-[#176b5b] sm:w-5" : "w-1.5 bg-[#153d37]/20 sm:w-2"}`}/> )}
         </div>
         <button type="button" onClick={() => { cycle(1); resetTimer(); }} aria-label="Foto berikutnya" className="flex cursor-pointer items-center justify-center rounded-full border border-[#153d37]/15 bg-white font-bold shadow transition hover:-translate-y-0.5 hover:border-[#176b5b]" style={{ width: `${r.btnS}px`, height: `${r.btnS}px`, fontSize: `${r.btnS * 0.5}px` }}>→</button>
       </div>
