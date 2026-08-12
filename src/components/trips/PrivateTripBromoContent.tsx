@@ -3,28 +3,29 @@
 import Image from "next/image";
 import { CalendarCheck, Check, CheckCircle, MapPin, Mountains, UsersThree, WhatsappLogo, X } from "@phosphor-icons/react/dist/ssr";
 import TripDetailHeader from "@/components/ui/trip-detail-header";
+import { withBasePath } from "@/lib/site-path";
 import { useT } from "@/lib/i18n";
 
 const destinations = [
-  { name: "Sunrise Point", image: "/destinations/private-bromo/sunrise-point.webp" },
-  { name: "Lembah Widodaren", image: "/destinations/private-bromo/lembah-widodaren.webp" },
-  { name: "Pura Luhur Poten", image: "/destinations/private-bromo/pura-luhur-poten.webp" },
-  { name: "Kawah Bromo", image: "/destinations/private-bromo/kawah-bromo.webp" },
-  { name: "Gunung Batok", image: "/destinations/private-bromo/gunung-batok.webp" },
-  { name: "Pasir Berbisik", image: "/destinations/private-bromo/pasir-berbisik.webp" },
-  { name: "Savana (Bukit Teletubbies)", image: "/destinations/private-bromo/savana.jpeg" },
+  { name: "Sunrise Point", image: withBasePath("/destinations/private-bromo/sunrise-point.webp") },
+  { name: "Lembah Widodaren", image: withBasePath("/destinations/private-bromo/lembah-widodaren.webp") },
+  { name: "Pura Luhur Poten", image: withBasePath("/destinations/private-bromo/pura-luhur-poten.webp") },
+  { name: "Kawah Bromo", image: withBasePath("/destinations/private-bromo/kawah-bromo.webp") },
+  { name: "Gunung Batok", image: withBasePath("/destinations/private-bromo/gunung-batok.webp") },
+  { name: "Pasir Berbisik", image: withBasePath("/destinations/private-bromo/pasir-berbisik.webp") },
+  { name: "Savana (Bukit Teletubbies)", image: withBasePath("/destinations/private-bromo/savana.jpeg") },
 ];
 const includes = ["7 destinasi wisata", "Transportasi pulang-pergi", "Jeep Bromo", "Tiket masuk Bromo", "Driver & BBM", "Biaya parkir", "Dokumentasi—all files"];
 const features = ["Dokumentasi", "Welcome Snack & Drink", "Full Powerbank", "Free Wi-Fi", "Insta360 X4 Air / Ace Pro 2", "Gimbal", "Handwarmer", "Guest House", "Professional Massage (2 pax)"];
 const facilityCards = [
-  { title: "Snack & Drink", images: ["/facilities/snack-drink.webp"] },
-  { title: "Full Powerbank", images: ["/facilities/powerbank.webp"] },
-  { title: "Free Wi-Fi", images: ["/facilities/wifi.webp"] },
-  { title: "Insta360 X4 Air / Insta360 Ace Pro 2", images: ["/facilities/insta360-x4.webp", "/facilities/insta360-ace.webp"] },
-  { title: "Gimbal", images: ["/facilities/gimbal.webp"] },
-  { title: "Handwarmer", images: ["/facilities/handwarmer.webp"] },
-  { title: "All Files & Edited Photos", images: ["/facilities/dokumentasi.webp"] },
-  { title: "Cinematic Video", images: ["/facilities/cinematic.webp"] },
+  { title: "Snack & Drink", images: [withBasePath("/facilities/snack-drink.webp")] },
+  { title: "Full Powerbank", images: [withBasePath("/facilities/powerbank.webp")] },
+  { title: "Free Wi-Fi", images: [withBasePath("/facilities/wifi.webp")] },
+  { title: "Insta360 X4 Air / Insta360 Ace Pro 2", images: [withBasePath("/facilities/insta360-x4.webp"), withBasePath("/facilities/insta360-ace.webp")] },
+  { title: "Gimbal", images: [withBasePath("/facilities/gimbal.webp")] },
+  { title: "Handwarmer", images: [withBasePath("/facilities/handwarmer.webp")] },
+  { title: "All Files & Edited Photos", images: [withBasePath("/facilities/dokumentasi.webp")] },
+  { title: "Cinematic Video", images: [withBasePath("/facilities/cinematic.webp")] },
 ];
 const packages = [
   {name:"Ekonomis", price:"1.800K", caption:"Esensial untuk menjelajah Bromo", unavailable:["Free Wi-Fi", "Insta360 X4 Air / Ace Pro 2", "Gimbal", "Handwarmer", "Guest House", "Professional Massage (2 pax)"]},

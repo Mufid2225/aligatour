@@ -81,11 +81,11 @@ const excludes = [
 ];
 
 const facilities = [
-  { title: "Full Powerbank", image: "/facilities/powerbank.webp" },
-  { title: "Free Wi-Fi", image: "/facilities/wifi.webp" },
-  { title: "Insta360 X4 Air", noteKey: "limited" as const, image: "/facilities/insta360-x4.webp" },
-  { title: "Insta360 Ace Pro 2", noteKey: "limited" as const, image: "/facilities/insta360-ace.webp" },
-  { title: "Gimbal", noteKey: "limited" as const, image: "/facilities/gimbal.webp" },
+  { title: "Full Powerbank", image: withBasePath("/facilities/powerbank.webp") },
+  { title: "Free Wi-Fi", image: withBasePath("/facilities/wifi.webp") },
+  { title: "Insta360 X4 Air", noteKey: "limited" as const, image: withBasePath("/facilities/insta360-x4.webp") },
+  { title: "Insta360 Ace Pro 2", noteKey: "limited" as const, image: withBasePath("/facilities/insta360-ace.webp") },
+  { title: "Gimbal", noteKey: "limited" as const, image: withBasePath("/facilities/gimbal.webp") },
 ];
 
 const packageFeatures = [
