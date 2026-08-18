@@ -14,7 +14,7 @@ const vehicles = [
   { unit: "HiAce", min: 1, max: 10, price: "Rp2.500.000" },
 ];
 
-const facilities = [
+const facilities: { title: string; noteKey?: "limited"; image: string }[] = [
   { title: "Snack & Drink", image: "/facilities/snack-drink.webp" },
   { title: "Full Powerbank", image: "/facilities/powerbank.webp" },
   { title: "Free Wi-Fi", image: "/facilities/wifi.webp" },

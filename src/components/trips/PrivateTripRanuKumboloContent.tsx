@@ -79,7 +79,7 @@ const excludes = [
   "Hal yang tidak disebutkan dalam include",
 ];
 
-const facilities = [
+const facilities: { title: string; noteKey?: "limited"; image: string }[] = [
   { title: "Full Powerbank", image: "/facilities/powerbank.webp" },
   { title: "Free Wi-Fi", image: "/facilities/wifi.webp" },
   { title: "Insta360 X4 Air", noteKey: "limited", image: "/facilities/insta360-x4.webp" },
